@@ -8,6 +8,7 @@ Web qismi quyi tizimida **administrator** foydalanuvchilarni administratsiya qil
 |---|---|---|---|
 | [`a1-foydalanuvchi-admin.md`](a1-foydalanuvchi-admin.md) | Foydalanuvchi: bloklash/rol/blacklist/PIN tiklash, RBAC, ikki faktorli tasdiq | A1 | ✅ |
 | [`a2-hisobotlar.md`](a2-hisobotlar.md) | Hisobotlar (foydalanuvchilar…integratsiya), PDF/XLSX/CSV | A2 | 🟡 |
+| [`r5-algoritm-parametrlari.md`](r5-algoritm-parametrlari.md) | R5: algoritm parametrlari sozlamalari | R5-AD-01 | spec |
 
 ## Modul vazifasi va asosiy talablari (TZ §4.2.2)
 > «Foydalanuvchilarni administratsiya qilish, ruxsatlarni boshqarish (RBAC), tizim sozlamalari va tizim hisobotlarini shakllantirish.»

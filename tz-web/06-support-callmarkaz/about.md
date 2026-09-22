@@ -8,6 +8,7 @@ Foydalanuvchi murojaatlarini ko'rib chiqish, javob berish, eskalatsiya qilish ha
 |---|---|---|---|
 | [`t2-murojaat-korib-chiqish.md`](t2-murojaat-korib-chiqish.md) | Murojaatni ishlash/javob/eskalatsiya, 24 soat javob | T2 | ✅ |
 | [`t3-callmarkaz-ticket.md`](t3-callmarkaz-ticket.md) | Telefon/chat orqali qabul, ticket yaratish, eskalatsiya | T3 | ✅ |
+| [`r5-sla-monitoring.md`](r5-sla-monitoring.md) | R5: SLA monitoring (muddati o'tgan so'rovlar) | R5-AD-02 | spec |
 
 ## Modul vazifasi va asosiy talablari (TZ §4.2.2)
 > «Foydalanuvchi murojaatlarini ko'rib chiqish, javob berish, eskalatsiya qilish hamda call-markaz orqali ticket yaratish.»

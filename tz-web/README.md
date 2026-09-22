@@ -35,7 +35,7 @@ Bu papka «Rentmi» axborot tizimining **Texnik Topshirig'i (TZ_07_07_2026)** ni
 - [`_endpointlar.md`](_endpointlar.md) — kutilayotgan admin/backend API (TZ asosida)
 - [`_talablar.md`](_talablar.md) — web-tegishli talablar (sessiya, RBAC, xavfsizlik, audit)
 - [`_konfliktlar.md`](_konfliktlar.md) — web-tegishli ziddiyatlar
-- [`_release5/`](_release5/about.md) — **Release 5 admin user-storylar** (R5-AD-01, R5-AD-02)
+- [`_release5/`](_release5/about.md) — Release 5 admin storylar **indeksi** (to'liq matn flow'larda: `03-administratorlik/r5-…`, `06-support-callmarkaz/r5-…`)
 
 ## Qamrov
 
