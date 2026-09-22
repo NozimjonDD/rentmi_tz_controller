@@ -17,6 +17,7 @@ To'liq spec-tahlil (web use-case'lar bilan): loyiha ildizidagi `TZ_konflikt_repo
 | **C5** | Guest stories | — | R3 ko'rsatadi ↔ R5 yashiradi | [06-elonlar](06-elonlar/tenant/asosiy-sahifa.md) |
 | **C6** | Skoring modeli | "past/o'rtacha/yuqori" | R5 "GREEN/YELLOW/RED + hard-reject + affordability" | [04-skoring](04-skoring/about.md) |
 | **C7** | Atama | "ko'chib kelish sanasi", "so'rov" | R5 "kirish sanasi", "ariza", "bron" | 06/07 |
+| **C-R5-1** | Countdown qizil chegarasi (R5 ichida zid) | R5 batafsil story (R5-UE-02): **1 soatdan** kam qolganda qizil | `Release 5 …pdf` xulosasi: **7 soatdan** kam | [_release5](_release5/about.md) |
 | **A2** | Skoring shakllantirish vaqti | §4.1.4.1 "5 daqiqa" ↔ S1 "≤2 daqiqa" (TZ ichida) | — | [04-skoring](04-skoring/about.md) |
 | **A5** | Bir vaqtdagi FU / SLA qamrovi | §4.1.3.1 "1000–5000" ↔ SLA faqat 1000 da | — | [_talablar](_talablar.md) |
 | **A1** | Hisobot vaqti (asosan web A2) | §4.1.4.1 "10 s" ↔ A2 "30 s" | — | web (ma'lumot uchun) |

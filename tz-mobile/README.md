@@ -42,6 +42,7 @@ Bu papka «Rentmi» axborot tizimining **Texnik Topshirig'i (TZ_07_07_2026)** ni
 - [`_endpointlar.md`](_endpointlar.md) — konsolidatsiyalangan backend API xaritasi (flow bo'yicha)
 - [`_talablar.md`](_talablar.md) — funksional bo'lmagan (NFR) va umumiy TZ talablari (tezlik, xavfsizlik, tillar, ergonomika)
 - [`_konfliktlar.md`](_konfliktlar.md) — TZ ↔ reliz/R5 ↔ kod ziddiyatlari
+- [`_release5/`](_release5/about.md) — **Release 5 to'liq user-storylar** (Ijarachi 11 + Uy egasi 6), flow'ga bog'langan + kod holati
 
 ## Qamrov
 
