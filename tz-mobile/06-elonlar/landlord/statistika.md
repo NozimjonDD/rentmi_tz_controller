@@ -30,3 +30,16 @@ TZ §4.2.1 e'lon statistikasi bo'yicha alohida ssenariy bermaydi; bu E1/E2 boshq
 - ⚠ **Daromadlarim/Xizmatlar — raqamsiz:** R5-UE-04 bo'yicha bu bloklar "Tez kunda" holatida (2–3-bosqich), shu sabab Holat 🟡. → [`_konfliktlar.md`](../../_konfliktlar.md).
 - ⚠ **Tracking fire-and-forget:** `view`/`phone-view` POST xatoligi UI'da ishlanmaydi (`announcement_stats_remote_data_source.dart:41/52` — "failed silently").
 - ⚠ **TZ da yo'q:** e'lon statistikasi va dashboard analitikasi TZ §4.2.1 da tavsiflanmagan — reliz/kod kengaytmasi.
+
+## Release 5 — R5-UE-04 — Asosiy sahifa: Analitika va "Tez kunda" bloklari
+**Kod holati:** 🟡 (analitika qisman/mock; "Tez kunda" placeholder'lar bor)
+
+**User Story:** Uy egasi sifatida men mulklarim bo'yicha faollik ko'rsatkichlarini bir ekranda ko'rishni xohlayman, shunda e'lonlarim samarasini baholay olaman.
+
+**Tavsif:** Analitika bloki: 7 kun / 30 kun switch; Ko'rishlar, So'rovlar, Yoqtirishlar, Qo'ng'iroqlar counterlari (o'zgarish belgisi bilan). Daromadlarim va Xizmatlar bloklari UI to'liq quriladi, lekin raqamlar/kontent o'rnida "Tez kunda" (2–3-bosqichga tayyorgarlik).
+
+**Qabul mezonlari:**
+- GIVEN uy egasi asosiy sahifada WHEN "7 kun" tanlansa THEN barcha counterlar 7 kunlik davr bo'yicha yangilanadi
+- GIVEN davr almashtirildi WHEN "30 kun" tanlansa THEN counterlar 30 kunlik davrga o'tadi
+- GIVEN Daromadlarim bloki WHEN sahifa yuklansa THEN raqamlar o'rnida "Tez kunda", blok bosilganda ham to'lov funksionali ochilmaydi
+- GIVEN Xizmatlar bloki WHEN sahifa yuklansa THEN kontent o'rnida "Tez kunda"

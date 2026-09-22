@@ -33,3 +33,16 @@ R2 — Ijara so'rovini ko'rib chiqish · §4.2.1. Uy egasi kiruvchi so'rovlarni 
 - ⚠ **"Qo'shimcha savol / muhokama" amali yo'q** — kodda faqat Qabul / Rad; TZ 'muhokama davom etmoqda' holati amalga oshirilmagan. → [`_konfliktlar.md`](../../_konfliktlar.md).
 - ⚠ Global inbox'da 4-tab **`contracts`** mavjud (uyquda turgan shartnoma funksiyasiga bog'liq) — [`12-contract-dormant/`](../../12-contract-dormant/about.md).
 - ⚠ Rad etishda "sabab" kiritish maydoni TZ da ixtiyoriy — kodda alohida sabab formasi yo'q (status faqat `rejected`).
+
+## Release 5 — R5-UE-01 — So'rovlar sahifasi yangilanishi
+**Kod holati:** 🟡 (ijarachi kartasidagi strukturalangan maydonlar to'liq emas — K4 ga bog'liq)
+
+**User Story:** Uy egasi sifatida men so'rovlarni ijarachining shartlari va mosligi bilan birga ko'rishni xohlayman, shunda tez va asosli qaror qabul qila olaman.
+
+**Tavsif:** So'rovlar sahifasida tablar (Barchasi / Yangi / Rad etilgan / Tasdiqlangan), statistika minigrafigi (jami so'rovlar, trend %). Ijarachi kartasi: Rentmi gauge (ball/100 + label), oila tarkibi chips, kirish sanasi / byudjet (max) / ijara muddati maydonlari, "Talablaringizga mos" badge, Qabul qilish / Rad qilish tugmalari.
+
+**Qabul mezonlari:**
+- GIVEN yangi so'rov keldi WHEN "Yangi so'rovlar" tabi ochilsa THEN kartada ijarachining kirish sanasi, byudjeti va muddati ko'rinadi
+- GIVEN ijarachi e'lon talablariga mos WHEN karta ko'rsatilsa THEN "Talablaringizga mos" badge ko'rinadi
+- GIVEN sahifa ochildi WHEN statistika bloki yuklansa THEN jami so'rovlar soni va trend grafigi ko'rinadi
+- GIVEN "Qabul qilish" bosildi WHEN tasdiq modali yopilsa THEN ijarachiga kontakt ochiladi va so'rov "Tasdiqlangan" tabiga o'tadi

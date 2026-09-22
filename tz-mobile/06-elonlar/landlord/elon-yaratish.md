@@ -32,3 +32,16 @@ E1 — E'lon yaratish · §4.2.1 (9 qadam). Uy egasi obyekt parametrlarini kirit
 - ⚠ **Foto maksimal chegara:** TZ **max 15** ta talab qiladi; kodda faqat **min 3** tekshiriladi (`listing.dart:247/260`), 15 ta yuqori chegara ko'rinmaydi. → [`_konfliktlar.md`](../../_konfliktlar.md).
 - ⚠ **Moderatsiya (E4) — web:** yangi e'lon 'moderatsiya kutmoqda' holatiga o'tadi; moderatsiyaning o'zi mobil emas, web/admin (`tz-web/`).
 - ⚠ **R5 yangi maydonlar backendga bog'liq:** `min_tenant_score`, kirish sanasi, minimal ijara davri — backend sxema migratsiyasini talab qiladi (R5 dependency).
+
+## Release 5 — R5-UE-06 — E'lon formasi yangi maydonlar va bozor ko'rsatkichi
+**Kod holati:** 🟡 (ba'zi maydonlar bor)
+
+**User Story:** Uy egasi sifatida men e'lonimda kirish sanasi, minimal ijara davri va skoring talabini belgilashni, hamda shu hududdagi o'xshash e'lonlar narxini ko'rishni xohlayman, shunda to'g'ri narx qo'yaman va mos ijarachilarni olaman.
+
+**Tavsif:** E'lon formasiga maydonlar: minimal ijara davri, kirish sanasi, minimal skoring talabi. Ijarachi skoring qismidagi eski tushuntirish teksti olib tashlanadi. Narx maydonida shu hudud bo'yicha o'xshash faol e'lonlar narxi min–max ko'rsatiladi.
+
+**Qabul mezonlari:**
+- GIVEN forma ochildi WHEN hudud va parametrlar kiritilsa THEN "Shu hududda o'xshash uylar: N mln – M mln so'm" ko'rsatkichi chiqadi
+- GIVEN o'xshash e'lonlar 3 tadan kam WHEN ko'rsatkich hisoblansa THEN diapazon ko'rsatilmaydi
+- GIVEN minimal skoring talabi belgilangan WHEN e'lon saqlansa THEN "Sizga mos" va skoring-mos hisob-kitoblarda shu talab ishlatiladi
+- GIVEN forma ochildi WHEN skoring bo'limi ko'rsatilsa THEN eski ijarachi-skoring teksti mavjud emas

@@ -31,3 +31,18 @@ E3 — E'lonlarni qidirish va filtrlash · §4.2.1 (3–6 qadam). Foydalanuvchi 
 - ⚠ **Clean Arch chetlab:** `FilterSessionCubit` `DioClient` ni to'g'ridan-to'g'ri chaqiradi (repository/usecase qatlamisiz) — modul ichidagi boshqa oqimlardan farq qiladi. → [`_konfliktlar.md`](../../_konfliktlar.md) E-K3.
 - ⚠ **rooms/pets faqat frontend:** filtr `rooms_min`, `rooms_max`, `pets` yuboradi, ammo backend spec kutilmoqda (`announcement_filter.dart:381` — "backend ignores unknown params harmlessly"). → E-K5.
 - ⚠ **Sahifalash:** `page_size=5` — TZ da sahifa hajmi ko'rsatilmagan.
+
+---
+
+## Release 5 — R5-IJ-04 — Filter yangilanishi
+**Kod holati:** ✅ (rooms/pets frontend-only — E-K5)
+
+**User Story:** Ijarachi sifatida men narx filtrini qulay qadamlar bilan sozlashni xohlayman, shunda keraksiz aniq raqamlar bilan ovora bo'lmayman.
+
+**Tavsif:** Narx maydonlari va slider so'mda mln qadamga, dollarda 100$ qadamga yaxlitlanadi; so'm/dollar toggle. "Filterni saqlash" va "Filterni tozalash" tugmalari. Saqlangan filtrlar mantig'i qayta ko'rib chiqiladi.
+
+**Qabul mezonlari:**
+- GIVEN valyuta so'm WHEN slider surilsa THEN qiymat mln qadam bilan (5 000 000 → 6 000 000)
+- GIVEN valyuta dollar WHEN slider surilsa THEN qiymat 100$ qadam bilan
+- GIVEN filter to'ldirilgan WHEN "Filterni saqlash" bosilsa THEN filter Saqlanganlar sahifasida paydo bo'ladi
+- GIVEN filter to'ldirilgan WHEN "Filterni tozalash" bosilsa THEN barcha maydonlar default holatga qaytadi

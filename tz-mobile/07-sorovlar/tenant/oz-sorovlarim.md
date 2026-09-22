@@ -31,3 +31,17 @@ R1 (chiquvchi ma'lumotlar) — «Yangi ijara so'rovi yozuvi (noyob identifikator
 ## Konflikt / farqlar
 - ⚠ **"Bekor qilingan" alohida status yo'q:** kodda bekor qilish `{status:'rejected'}` yuboradi — R5-IJ-10 talab qilgan alohida "bekor qilingan" holati/badge yo'q, u rad etilgan bilan bir xil ko'rinadi. → [`_konfliktlar.md`](../../_konfliktlar.md).
 - ⚠ Mijoz statusi 3 qiymat; R5 dagi 5 ta nomlanish (ko'rilmoqda/kutilmoqda/qabul/rad/bekor) faqat backend `statusText` orqali ajratilishi mumkin — mijoz mantig'i uni farqlamaydi.
+
+---
+
+## Release 5 — R5-IJ-10 — So'rov statuslari va bekor qilish
+**Kod holati:** 🟡 (bekor = rad; alohida "bekor qilingan" status yo'q — K5)
+
+**User Story:** Ijarachi sifatida men yuborgan so'rovimni bekor qila olishni xohlayman, shunda fikrim o'zgarganda uy egasini bekorga kuttirmayman.
+
+**Tavsif:** Statuslar: "ko'rilmoqda" / "kutilmoqda" / "qabul qilindi" / "rad etildi" / "bekor qilingan". Bekor qilish tugmasi faqat hali ko'rib chiqilmagan so'rovlarda; bekor qilingan so'rov ro'yxatda badge bilan turadi.
+
+**Qabul mezonlari:**
+- GIVEN so'rov "kutilmoqda" WHEN ijarachi bekor qilishni tasdiqlasa THEN "bekor qilingan"ga o'tadi va uy egasiga bildirishnoma
+- GIVEN so'rov "qabul qilindi" WHEN ro'yxat ochilsa THEN bekor qilish tugmasi ko'rinmaydi
+- GIVEN ijarachi bekor qilmoqda VA uy egasi ayni paytda qabul qilmoqda WHEN to'qnashsa THEN birinchi yozilgan amal g'olib, ikkinchisiga aktual holat xabari

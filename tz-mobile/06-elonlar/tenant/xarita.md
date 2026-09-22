@@ -30,3 +30,18 @@ E3 — E'lonlarni qidirish va filtrlash · §4.2.1. Xarita — E3 ning muqobil k
 ## Konflikt / farqlar
 - ⚠ **Klasterlash — backend:** klaster hisobi va zoom bo'yicha rejim server tomonida; mobil faqat `bounds/zoom` yuboradi. TZ da klasterlash aniq belgilanmagan. → [`_konfliktlar.md`](../../_konfliktlar.md).
 - ⚠ **Filtr to'liq emas:** xarita so'rovi filtrning bir qismini (narx, hudud, kategoriya, mebel) uzatadi; katalog filtridagi `area/floor/period/comfort` xaritaga o'tmaydi.
+
+---
+
+## Release 5 — R5-IJ-06 — Xarita orqali qidirish
+**Kod holati:** ✅
+
+**User Story:** Ijarachi sifatida men e'lonlarni xaritada ko'rishni xohlayman, shunda menga qulay joylashuvdagi uylarni tez topa olaman.
+
+**Tavsif:** Xarita ekrani: e'lon pinlari va klasterlar, xarita ustidagi chips (xona soni, Mebelli), "Ro'yhat bo'yicha" toggle, pastda "N ta e'lon topildi" bottom sheet, saralash. Asosiy sahifadagi banner orqali kirish.
+
+**Qabul mezonlari:**
+- GIVEN xarita ochilgan WHEN chips tanlansa THEN pinlar va bottom sheet ro'yxati filtrlanadi
+- GIVEN pin bosildi WHEN e'lon kartasi ochilsa THEN karta badge'lar va asosiy parametrlar bilan ko'rinadi
+- GIVEN "Ro'yhat bo'yicha" bosildi WHEN rejim almashsa THEN ro'yxat ko'rinishiga o'tadi va xaritaga qaytish mumkin
+- GIVEN xarita yuklanmoqda WHEN 5 soniyadan oshsa THEN xatolik/retry holati ko'rsatiladi

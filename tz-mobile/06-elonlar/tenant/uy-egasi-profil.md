@@ -28,3 +28,18 @@ TZ (§4.2.1) da alohida "uy egasi ommaviy profili" ssenariysi yo'q — bu R5 nin
 ## Konflikt / farqlar
 - ⚠ **R5-IJ-08 amalga oshirilmagan:** ommaviy profil ekrani, endpointi va "Tasdiqlangan uy egasi" bloki kodda yo'q — faqat `ownerName`/`ownerUserId` uzatiladi. → [`_konfliktlar.md`](../../_konfliktlar.md) E-K6.
 - ⚠ **Adashtirmaslik:** `landlord_dashboard/domain/entities/landlord_profile.dart` uy egasining shaxsiy dashboard profili — ijarachi ko'radigan ommaviy profil bilan bir narsa emas.
+
+---
+
+## Release 5 — R5-IJ-08 — Uy egasi ommaviy profili
+**Kod holati:** ❌ (kodda ekran/endpoint yo'q — E-K6)
+
+**User Story:** Ijarachi sifatida men uy egasi haqida tekshirilgan ma'lumotni ko'rishni xohlayman, shunda firibgarlikdan himoyalanaman va ishonch bilan ariza yuboraman.
+
+**Tavsif:** E'lon sahifasidagi uy egasi blokidan ommaviy profil ochiladi: Rentmi'da N vaqt, e'lonlar soni, "Tasdiqlangan uy egasi — shaxsi va hujjatlari Rentmi tomonidan tekshirilgan", javob berish odati, tegishli e'lonlar. Reyting va "Rentmi kafolati" bloklari yashirin (RelizF). Chat/so'rov oqimida "faqat platforma orqali muloqot qiling" xavfsizlik xabari.
+
+**Qabul mezonlari:**
+- GIVEN uy egasi identifikatsiyadan o'tgan va mulk tegishliligi tasdiqlangan WHEN profil ochilsa THEN "Tasdiqlangan uy egasi" bloki ko'rinadi
+- GIVEN uy egasining boshqa faol e'lonlari bor WHEN profil ochilsa THEN "Tegishli e'lonlar" ro'yxati ko'rinadi
+- GIVEN profil ochildi WHEN sahifa yuklansa THEN reyting yulduzi va kafolat bloki ko'rinmaydi
+- GIVEN ijarachi chat boshladi WHEN oyna ochilsa THEN xavfsizlik xabari ko'rinadi

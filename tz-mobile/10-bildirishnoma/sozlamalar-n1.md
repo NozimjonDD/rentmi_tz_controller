@@ -31,3 +31,17 @@ N1 — Push-bildirishnoma sozlamalarini boshqarish · §4.2.1. Foydalanuvchi 'So
 - ⚠ **N1 asosiy funksiyasi amalga oshirilmagan:** TZ **per-tur** yoqish/o'chirish + saqlash (≤2 s) talab qiladi; kodda esa faqat **bitta global toggle**, saqlanmaydi, turlar bo'yicha ajratmaydi. → [`_konfliktlar.md`](../_konfliktlar.md).
 - ⚠ Guest'lar uchun toggle yashiriladi (account-scoped) — TZ mehmon holatini ajratmaydi.
 - ⚠ R5-IJ-11 «yangi turlar» N1 ga qo'shilishi kerak edi — baza sozlama yo'qligi sabab qo'shilmagan.
+
+---
+
+## Release 5 — R5-IJ-11 — Narx va yangi e'lon bildirishnomalari
+**Kod holati:** 🟡 (push bor; N1 sozlamalari amalda yo'q — ❌)
+
+**User Story:** Ijarachi sifatida men saqlangan uy yoki filtrim bo'yicha narx tushganda va yangi e'lon chiqqanda xabar olishni xohlayman, shunda qulay imkoniyatni o'tkazib yubormayman.
+
+**Tavsif:** Ikki yangi bildirishnoma turi: "Narxi tushdi" (saqlangan e'lon/filter) va "Yangi e'lonlar" (saqlangan filter). FCM push + tizim ichi. N1 sozlamalarida boshqariladi.
+
+**Qabul mezonlari:**
+- GIVEN ijarachi e'lonni saqlagan WHEN narx belgilangan foizdan ko'p tushsa THEN push va tizim ichi bildirishnoma
+- GIVEN saqlangan filter mavjud WHEN unga mos yangi e'lon moderatsiyadan o'tsa THEN push
+- GIVEN N1 sozlamalarida tur o'chirilgan WHEN hodisa yuz bersa THEN push kelmaydi, faqat tizim ichi xabar

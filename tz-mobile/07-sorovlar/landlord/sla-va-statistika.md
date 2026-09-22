@@ -32,3 +32,32 @@ R2 (9-qadam) — «Uy egasi e'lonlar so'rovlari bo'yicha statistik ma'lumotlar v
 - ⚠ **SLA muddati konflikti:** TZ R2 = **7 kun**, R5-UE-02 = **24 soat** (ichki qaror). Ikkalasi ham kodda amalga oshirilmagan.
 - ⚠ **Javob vaqti indikatori yo'q** (R5-UE-03 «Odatda N soatda javob beradi»).
 - ⚠ **Dinamika grafigi + tile'lar mock** — real backend stats endpointi yo'q (karusel/to'liqlik esa real).
+
+## Release 5 — R5-UE-02 — SLA 24 soat va countdown
+**Kod holati:** ❌ (24h countdown kodda yo'q — K3/C3)
+
+**User Story:** Uy egasi sifatida men har so'rovga javob berish uchun qancha vaqt qolganini ko'rishni xohlayman, shunda ijarachini kuttirib qo'ymayman.
+
+**Tavsif:** Har yangi so'rovda "Javob berishingiz kerak: HH:MM:SS" countdown (deadline = so'rov vaqti + 24 soat); **1 soatdan kam qolganda qizil**. Asosiy sahifada "Diqqat talab qiladi" bloki: javob kutayotgan arizalar soni va eng eskisiga qolgan vaqt. Muddati o'tsa so'rov "ko'rib chiqilmagan"ga o'tadi, ikki tomonga push. Eslatma pushlari 12- va 22-soatlarda. "Ko'rib chiqilmagan" yakuniy rad emas — keyin ham javob berish mumkin.
+
+> ⚠ **R5 ichida ziddiyat:** bu batafsil story «**1 soatdan** kam qolganda qizil» deydi; `Release 5 17.08.2026.pdf` xulosasi esa «**7 soatdan** kam qolganda qizil». → [`_konfliktlar.md`](../../_konfliktlar.md) (C-R5-1).
+
+**Qabul mezonlari:**
+- GIVEN yangi so'rov keldi WHEN karta ko'rsatilsa THEN countdown 24:00:00 dan boshlab kamayadi
+- GIVEN qolgan vaqt 1 soatdan kam WHEN karta ko'rsatilsa THEN countdown qizil rangda
+- GIVEN 24 soat o'tdi va javob berilmadi WHEN scheduler ishga tushsa THEN so'rov "ko'rib chiqilmagan"ga o'tadi va ikkala tomonga push
+- GIVEN so'rov "ko'rib chiqilmagan" WHEN uy egasi qabul qilsa THEN "qabul qilindi"ga o'tadi va first_response_time yoziladi
+- GIVEN javob kutayotgan so'rovlar bor WHEN uy egasi asosiy sahifani ochsa THEN "Diqqat talab qiladi" blokida soni va eng eskisiga qolgan vaqt ko'rinadi
+
+## Release 5 — R5-UE-03 — Javob vaqti indikatori
+**Kod holati:** ❌ (first_response_time / indikator kodda yo'q)
+
+**User Story:** Uy egasi sifatida men tez javob berishim ijarachilarga ko'rinishini xohlayman, shunda e'lonlarim ko'proq ariza oladi.
+
+**Tavsif:** Har so'rov bo'yicha first_response_time yoziladi. Ko'rsatkich — oxirgi 30 kun medianasi, soatlik pog'onaga yaxlitlanadi ("odatda 1 soat ichida javob beradi"...). Kamida 3 ta javob bo'lsagina e'lon sahifasida va ommaviy profilda chiqadi. Uy egasiga onboarding tooltip orqali tushuntiriladi.
+
+**Qabul mezonlari:**
+- GIVEN uy egasida kamida 3 ta javob yozuvi bor WHEN e'lon yoki profil ochilsa THEN indikator mediana asosida ko'rinadi
+- GIVEN javoblar 3 tadan kam WHEN sahifa ochilsa THEN indikator ko'rsatilmaydi
+- GIVEN bitta so'rovga juda kech javob berilgan WHEN mediana hisoblansa THEN bitta chetlanish ko'rsatkichni keskin buzmaydi (mediana, o'rtacha emas)
+- GIVEN uy egasi birinchi marta So'rovlar sahifasini ochdi WHEN sahifa yuklansa THEN tez javob foydasi haqida tooltip ko'rsatiladi

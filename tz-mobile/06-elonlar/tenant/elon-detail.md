@@ -31,3 +31,17 @@ E3 — E'lonlarni qidirish va filtrlash · §4.2.1 (5-qadam). Foydalanuvchi ro'y
 - ⚠ **Badge'lar aralash manba:** "Tekshirilgan" = backend `moderated_status`; spec pill = frontend; "Sizga mos"/"Narxi tushdi" — home/list badge bayroqlaridan (detail entity'sida bu maydonlar to'liq emas). → [`_konfliktlar.md`](../../_konfliktlar.md) E-K1.
 - ⚠ **Javob vaqti indikatori (R5-IJ-07):** "Odatda N soatda javob beradi" — R5 backend agregatiga tayanadi (kamida 3 javob, 30 kun mediana); kod tomonda to'liq bog'lanmagan bo'lishi mumkin.
 - ⚠ **Uy egasi bloki → ommaviy profil:** o'tish nuqtasi bor, ammo ommaviy profil ekrani kodda yo'q (`uy-egasi-profil.md`). → E-K6.
+
+---
+
+## Release 5 — R5-IJ-07 — E'lon detail yangilanishi
+**Kod holati:** ✅
+
+**User Story:** Ijarachi sifatida men e'lon sahifasida qaror uchun zarur barcha ma'lumotni ko'rishni xohlayman, shunda boshqa manbalarga murojaat qilmayman.
+
+**Tavsif:** Yangi maydonlar: minimal ijara davri, kirish sanasi, e'lon joylangan vaqt. Ko'rildi/Ariza/Saqlangan statistika bloki. Badge'lar qatori va javob vaqti indikatori. CTA — "Ariza jo'natish".
+
+**Qabul mezonlari:**
+- GIVEN e'lon ochildi WHEN sahifa yuklansa THEN minimal ijara davri, kirish sanasi va joylangan vaqt ko'rinadi
+- GIVEN statistika mavjud WHEN sahifa yuklansa THEN Ko'rildi/Ariza/Saqlangan sonlari ko'rinadi
+- GIVEN sahifa pastigacha aylantirildi WHEN CTA ko'rinsa THEN tugma "Ariza jo'natish" deb nomlangan

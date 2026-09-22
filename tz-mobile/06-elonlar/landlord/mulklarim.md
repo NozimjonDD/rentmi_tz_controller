@@ -30,3 +30,15 @@ E2 — E'lonni tahrirlash yoki o'chirish · §4.2.1 (1-qadam). "Mening e'lonlari
 ## Konflikt / farqlar
 - ⚠ **Statuslar mos emas:** R5-UE-05 uch status (**qoralama / ijarada / bo'sh**) beradi; kodda `OwnerPropertyStatus{draft, readyToPublish, active}` + alohida `OwnerPropertyVacancy{vacant, occupied}` — "ijarada"/"bo'sh" active+vacancy kombinatsiyasiga to'g'ri keladi. → [`_konfliktlar.md`](../../_konfliktlar.md).
 - ⚠ **Ikki katalog:** uy egasi `GET /mobile/announcements/list/`, ijarachi esa `.../tenant/list/` — turli kontrakt. → [`_konfliktlar.md`](../../_konfliktlar.md) E-K8.
+
+## Release 5 — R5-UE-05 — "Mulklarim" statuslari
+**Kod holati:** 🟡 (kod statuslari R5 ga to'liq mos emas — E-K10)
+
+**User Story:** Uy egasi sifatida men mulklarimni holati bo'yicha ajratib ko'rishni xohlayman, shunda qaysi uy bo'sh, qaysi ijarada ekanini bir qarashda bilaman.
+
+**Tavsif:** "Mulklarim" bo'limiga qoralama / ijarada / bo'sh statuslari qo'shiladi (mavjud faol / moderatsiyada / rad etilgan / arxiv badge'lariga qo'shimcha). Uy egasi statusni qo'lda o'zgartira oladi.
+
+**Qabul mezonlari:**
+- GIVEN e'lon yaratish yakunlanmagan WHEN "Mulklarim" ochilsa THEN e'lon "qoralama" statusida ko'rinadi va tahrirlashni davom ettirish mumkin
+- GIVEN uy egasi so'rovni qabul qilib ijaraga berdi WHEN statusni "ijarada"ga o'zgartirsa THEN e'lon katalogda ko'rinmaydi
+- GIVEN "ijarada" WHEN "bo'sh"ga o'zgartirilsa THEN e'lon qayta faollashadi (moderatsiya holati saqlangan bo'lsa qayta moderatsiyasiz)

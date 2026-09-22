@@ -32,3 +32,49 @@ E3 — E'lonlarni qidirish va filtrlash · §4.2.1. Asosiy sahifa E3 ning kirish
 - ⚠ **Badge'lar manbai:** *Sizga mos / Top / Narxi tushdi* faqat `tenant/home/` javobida keladi — `announcements` entity'sida bu maydonlar yo'q. "Tekshirilgan" = backend `moderated_status` (`moderation_status.dart`), spec pill (xona/m²/qavat) = frontend, `is_favorited` = backend. → [`_konfliktlar.md`](../../_konfliktlar.md) E-K1.
 - ⚠ **Stories:** R5 «Actual History stories yashiriladi (kod saqlanadi)» ↔ kodda faol (`tenant_stories_cubit.dart`, `GET /mobile/stories/`). → E-K2.
 - ⚠ **Skoring-mos uylar bloki (R5-IJ-01):** gauge/score card mavjud, ammo "Skoringizga mos N ta uy" alohida hisoblovchi endpoint (R5 backend) kodda topilmadi — blok qisman.
+
+---
+
+## Release 5 — R5-IJ-01 — Yangilangan asosiy sahifa
+**Kod holati:** 🟡 (navbar'da "Saved" yo'q — K2; stories yashirilishi ↔ kodda faol — E-K2)
+
+**User Story:** Ijarachi sifatida men yangilangan asosiy sahifada kerakli bo'limlarga tez o'tishni xohlayman, shunda uy qidirishni bir ekrandan boshlay olaman.
+
+**Tavsif:** Asosiy sahifa yangi dizaynda: salomlashish headeri, tepada chat va bildirishnoma tugmalari, "Toshkentda uy qidiramizmi?" klikabel shahar tanlovi, xona soni chips filtri, bo'limlar (TOP kvartiralar / Kvartiralar / Rentmi Maslahat beradi / Villa), "Xarita orqali qidirish" banneri. Pastki navbar: Main, Saved, Lenta, So'rovlar, Profil. Actual History stories yashirin qoladi.
+
+**Qabul mezonlari:**
+- GIVEN ijarachi tizimga kirgan WHEN asosiy sahifa ochilsa THEN header, chips, barcha bo'limlar va yangi navbar 3 soniya ichida yuklanadi
+- GIVEN shahar nomi ko'rsatilgan WHEN "Toshkentda" bosilsa THEN shahar/hudud tanlash oynasi ochiladi va tanlov barcha bo'limlarga qo'llanadi
+- GIVEN xona chips'lari WHEN "2 xona" tanlansa THEN bo'limlardagi e'lonlar 2 xonalilarga filtrlanadi
+- GIVEN bo'lim mavjud WHEN "Hammasi >" bosilsa THEN shu bo'limning to'liq ro'yxat sahifasi ochiladi
+- GIVEN yangi navbar WHEN "Lenta" bosilsa THEN e'lonlar lentasi ochiladi (yangi sahifa emas)
+
+---
+
+## Release 5 — R5-IJ-02 — Skoring-mos uylar bloki
+**Kod holati:** 🟡 (skoring-mos endpoint bor)
+
+**User Story:** Ijarachi sifatida men skoring balimga mos uylar sonini ko'rishni xohlayman, shunda arizam qabul qilinish ehtimoli yuqori uylarga e'tibor qarata olaman.
+
+**Tavsif:** Asosiy sahifada gauge (ball), "Skoringizga mos N ta uy" va "Arizalaringiz ustuvor ko'rib chiqiladi" izohi. Bosilganda mos uylar ro'yxati ochiladi. Moslik: ijarachi bali ≥ e'lonning minimal skoring talabi. Soni soatlik keshda.
+
+**Qabul mezonlari:**
+- GIVEN ijarachi skoringdan o'tgan WHEN asosiy sahifa ochilsa THEN blokda joriy bal va mos uylar soni ko'rinadi
+- GIVEN ijarachi skoringdan o'tmagan WHEN asosiy sahifa ochilsa THEN blok "Skoringdan o'ting" CTA bilan (S1 ga yo'naltiradi)
+- GIVEN blok ko'rsatilgan WHEN bosilsa THEN faqat mos e'lonlardan iborat ro'yxat ochiladi
+- GIVEN mos uy yo'q WHEN blok ochilsa THEN "Hozircha mos uy topilmadi" ko'rsatiladi
+
+---
+
+## Release 5 — R5-IJ-03 — Badge'lar tizimi
+**Kod holati:** 🟡 (badge'lar faqat home endpoint — E-K1)
+
+**User Story:** Ijarachi sifatida men e'lon kartalarida ishonch va moslik belgilarini ko'rishni xohlayman, shunda qaysi uyga ariza berishni tezroq hal qila olaman.
+
+**Tavsif:** To'rt badge: "Sizga mos" (ikki tomonlama moslik), "Top" (og'irlikli ball, hudud kesimida), "Tekshirilgan" (moderatsiya + identifikatsiya + tegishlilik AND), "Narxi tushdi" (narx tarixi). Rasm ustida m²/xona/qavat va kartada ko'rishlar soni.
+
+**Qabul mezonlari:**
+- GIVEN e'lon uch shartning barchasiga javob beradi WHEN karta ko'rsatilsa THEN "Tekshirilgan" chiqadi; birorta shart bajarilmasa — chiqmaydi
+- GIVEN e'lon ijarachi filtriga mos VA ijarachi e'lon talabiga mos WHEN karta ko'rsatilsa THEN "Sizga mos" chiqadi
+- GIVEN narx 7–14 kunda belgilangan foizdan ko'p pasaygan WHEN karta ko'rsatilsa THEN "Narxi tushdi" chiqadi; sun'iy ko'tarib-tushirishda chiqmaydi
+- GIVEN tegishlilik ma'lumoti yo'q WHEN karta ko'rsatilsa THEN "Tekshirilgan" ko'rsatilmaydi (default: yashirish)

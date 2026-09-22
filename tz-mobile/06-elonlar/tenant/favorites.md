@@ -29,3 +29,17 @@ E3 — E'lonlarni qidirish va filtrlash · §4.2.1. TZ E3 filtrni **saqlash** im
 ## Konflikt / farqlar
 - ⚠ **GET-mutatsiya:** wishlist o'zgarishi holat o'zgartiruvchi bo'lsa-da `GET /mobile/wishlist/update/` orqali bajariladi (POST/DELETE emas) — REST semantikasiga zid. → [`_konfliktlar.md`](../../_konfliktlar.md) E-K4.
 - ⚠ **`isFavorite` doim `false`:** lokal tekshiruv `isFavorite()` har doim `false` qaytaradi (`favorites_remote_data_source.dart:171`) — saqlangan holat home/list javobidagi `is_favorited` ga tayanadi.
+
+---
+
+## Release 5 — R5-IJ-05 — Saqlanganlar sahifasi
+**Kod holati:** ✅
+
+**User Story:** Ijarachi sifatida men saqlangan uylar va filtrlarimni bitta joyda ko'rishni xohlayman, shunda qidiruvimni davom ettirishim oson bo'ladi.
+
+**Tavsif:** "Saqlanganlar" sahifasi 2 tab: Saqlangan uylar / Saqlangan filterlar. Har filtr kartasida parametrlar, "N ta e'lon bor" va "+N ta yangi" badge.
+
+**Qabul mezonlari:**
+- GIVEN saqlangan filtrlar mavjud WHEN sahifa ochilsa THEN har filtr parametrlari va e'lonlar soni bilan ko'rinadi
+- GIVEN filtr saqlangandan keyin yangi mos e'lonlar qo'shilgan WHEN sahifa ochilsa THEN "+N ta yangi" badge ko'rinadi
+- GIVEN filtr kartasi bosildi WHEN ro'yxat ochilsa THEN yangi e'lonlar birinchi ko'rsatiladi va badge nolga tushadi

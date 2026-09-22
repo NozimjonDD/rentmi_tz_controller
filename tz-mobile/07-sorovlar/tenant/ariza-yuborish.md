@@ -34,3 +34,17 @@ R1 — Ijara so'rovini yuborish · §4.2.1. Ijarachi (tizimga kirgan, ijarachi r
 - ⚠ **Tuzilgan maydonlar yo'q:** TZ (kirish sanasi, byudjet, ijara muddati) va R5-IJ-09 (kirish sanasi, byudjet max, ijara muddati, to'lov kuni) maydonlarini forma **to'plamaydi** — faqat `text` erkin matn yuboriladi. → [`_konfliktlar.md`](../../_konfliktlar.md).
 - Chat imkoniyati (TZ 2-qadam) so'rov formasida emas, alohida chat modulida — [`08-chat/`](../../08-chat/about.md).
 - Takroriy so'rov taqiqi va blacklist tekshiruvi backend zimmasida (mijozda alohida oqim yo'q).
+
+---
+
+## Release 5 — R5-IJ-09 — So'rov formasi yangi maydonlar
+**Kod holati:** ❌ (kodda faqat erkin matn — K4)
+
+**User Story:** Ijarachi sifatida men so'rovda kirish sanasi, byudjet va muddatni ko'rsatishni xohlayman, shunda uy egasi mening shartlarimni oldindan bilib qaror qabul qiladi.
+
+**Tavsif:** So'rov formasiga maydonlar: kirish sanasi, byudjet (max), ijara muddati, to'lov kuni. Bu ma'lumotlar uy egasining ijarachi kartasida ko'rsatiladi.
+
+**Qabul mezonlari:**
+- GIVEN forma ochildi WHEN maydonlar to'ldirilmasa THEN majburiy maydonlar bo'yicha validatsiya xabari
+- GIVEN forma to'ldirildi WHEN so'rov yuborilsa THEN uy egasi kartasida kirish sanasi / byudjet / muddat ko'rinadi
+- GIVEN Rentmi bali yo'q WHEN so'rov yuborilmoqchi bo'lsa THEN S1 (hisobot xarid) taklif etiladi (TZ R1)
