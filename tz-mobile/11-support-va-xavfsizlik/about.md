@@ -10,6 +10,7 @@ Texnik qo'llab-quvvatlash (murojaat) hamda foydalanuvchi kontenti xavfsizligi: m
 | [`report-service.md`](report-service.md) | To'liq hisobot (Rentmi) tarifi xizmati | — (S1 bilan bog'liq) | ✅ |
 | [`moderation-shikoyat.md`](moderation-shikoyat.md) | UGC: shikoyat/report qilish | UGC (E4 web) | ✅ |
 | [`block-va-privacy.md`](block-va-privacy.md) | Foydalanuvchini bloklash + maxfiylik markazi | UGC / Guideline 1.2 | ✅ |
+| [`yordam-materiallar.md`](yordam-materiallar.md) | Video/FAQ/PDF yordam + dev/staging/prod muhitlar | §4.1.10 | 🟡 |
 
 ## Umumiy holat (kod'dagi haqiqiy holat)
 

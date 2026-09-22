@@ -48,6 +48,13 @@ Har bir TZ mobil use-case va reliz/R5 funksiyasi qamrab olinganini va kod'dagi h
 | Bloklash + maxfiylik | [11-.../block-va-privacy](11-support-va-xavfsizlik/block-va-privacy.md) | ✅ | Apple Guideline 1.2 |
 | Elektron shartnoma | [12-contract-dormant](12-contract-dormant/about.md) | 💤 | To'liq yozilgan, o'chirilgan (3-bosqich) |
 
+## 2b. Umumiy TZ bandlari (mobil-tegishli, keyin qo'shilgan)
+
+| TZ bandi | Mavzu | Flow (hujjat) | Holat | Izoh |
+|---|---|---|---|---|
+| **§4.1.1.3** | Faoliyat rejimlari (asosiy/texnik/avariyaviy) | [00-umumiy/faoliyat-rejimlari](00-umumiy/faoliyat-rejimlari.md) | 🟡 | Offline/kesh + xatolik ✅; alohida "maintenance" ekrani yo'q |
+| **§4.1.10** | Yordam materiallari + muhitlar | [11-.../yordam-materiallar](11-support-va-xavfsizlik/yordam-materiallar.md) | 🟡 | FAQ ✅, dev/staging/prod ✅; **video/PDF qo'llanma yo'q** |
+
 ## 3. Yakuniy hisob
 
 - **TZ mobil use-case'lar:** 15 dan — ✅ 10 · 🟡 4 (U4, R1, R2, T1) · ❌ 1 (N1). **Barchasi qamralgan.**

@@ -11,6 +11,7 @@ Ilovaga birinchi kirish oqimi: splash → til tanlash → onboarding → mehmon 
 | [`onboarding.md`](onboarding.md) | 3 slayd, guest-first entry | US3 | ✅ |
 | [`mehmon-rejimi.md`](mehmon-rejimi.md) | Guest imkoniyatlari (E3 ha, R1 yo'q) | §4.1.3.2 · US3 | ✅ |
 | [`navigatsiya.md`](navigatsiya.md) | Ikki navbar (landlord / tenant) | reliz R5-IJ-01 | 🟡 |
+| [`faoliyat-rejimlari.md`](faoliyat-rejimlari.md) | Asosiy / texnik xizmat / avariyaviy rejim (mobil) | §4.1.1.3 | 🟡 |
 
 ## Umumiy oqim (koddagi haqiqiy holat)
 
